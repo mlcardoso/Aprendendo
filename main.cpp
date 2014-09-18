@@ -48,8 +48,6 @@ void inserePontoNoLugarCerto(int x, int y)
 	
 			double distanciaY = abs(yAplicadoReta - y);
 			double distanciaX = abs(xAplicadoReta - x);
-
-				printf("DistanciaX = %f,DistanciaY = %f, entre %d - %d \n",distanciaX,distanciaY,i,i+1);
 				
 			if(distanciaY < 10 && distanciaY < DistanciaMenorY)
 			{
@@ -57,7 +55,6 @@ void inserePontoNoLugarCerto(int x, int y)
 				{
 					ponto = i;
 					DistanciaMenorY = distanciaY;
-					printf("DistanciaMenorY = %f, entre %d - %d \n",DistanciaMenorY,i,i+1);
 				}
 			}
 			if(distanciaX < 10 && distanciaX < DistanciaMenorX)
@@ -66,7 +63,6 @@ void inserePontoNoLugarCerto(int x, int y)
 				{
 					ponto = i;
 					DistanciaMenorX = distanciaX;
-					printf("DistanciaMenorY = %f, entre %d - %d \n",DistanciaMenorY,i,i+1);
 				}
 			}
 
@@ -76,12 +72,10 @@ void inserePontoNoLugarCerto(int x, int y)
 
 			for (j = nPontos; j>ponto; j--)
 			{	
-				printf("move da %d para %d\n",j,j+1);
 				pontos[j].x = pontos[j-1].x;
 				pontos[j].y = pontos[j-1].y;
 		
 			}
-			printf("addiciona na posicao %d - %d \n",j,j+1);		
 			pontos[j+1].x = x;
 			pontos[j+1].y = y;
 			addeded = 1;
@@ -117,7 +111,6 @@ int procuraPontoProximo(int x, int y)
 			maisProximoI = i;
 		}
 	}
-	printf("Mais Proximo = %d\n",maisProximoI);
 	return maisProximoI;
 }
 void removePontoProximo (int x, int y)
@@ -149,7 +142,6 @@ void mouseClicks (int button, int state, int x, int y)
 		inserePontoNoLugarCerto(x,500 - y);
 		glutPostRedisplay();
 	}
-	printf("nPontos = %d\n",nPontos);
 }
 
 void mouseArraste (int x, int y)
